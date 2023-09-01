@@ -1,8 +1,13 @@
+import { IProduct } from "@/types";
 import { BASE_URL } from "..";
 
-export const getAllProduct = async () => {
-  const data = fetch(`${BASE_URL}/products`)
-    .then((res) => res.json())
-    .then((json) => console.log(json));
+export const getAllProduct = async (): Promise<IProduct[]> => {
+  const response = await fetch(`${BASE_URL}/products`);
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch products");
+  }
+
+  const data: IProduct[] = await response.json();
   return data;
 };
