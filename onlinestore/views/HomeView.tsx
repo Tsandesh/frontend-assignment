@@ -12,7 +12,7 @@ const HomeView = () => {
   if (isError) return <h1>error...</h1>;
   return (
     <>
-      <div className=" grid grid-cols-3 gap-8 mx-8 mt-4">
+      <div className=" grid grid-cols-3 gap-8 mx-8 mt-20">
         {data?.length ? (
           data?.map((product, id) => (
             <ProductCard key={`Product_${id}`} product={product} />

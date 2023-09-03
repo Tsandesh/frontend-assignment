@@ -16,7 +16,7 @@ const SearchView = () => {
 
   return (
     <div>
-      <div className=" grid grid-cols-3 gap-8 mx-8 mt-4">
+      <div className=" grid grid-cols-3 gap-8 mx-8 mt-20">
         {products?.length ? (
           products?.map((product, id) => {
             if (

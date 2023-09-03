@@ -1,6 +1,6 @@
-import TenStackProvider from "@/provider/TenstackProvider";
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import type { Metadata } from "next";
+import TenStackProvider from "@/provider/TenstackProvider";
 import Navbar from "@/components/Navbar";
 
 import ReduxProvider from "@/provider/ReduxProvider";
@@ -23,12 +23,11 @@ export default function RootLayout({
       <ReduxProvider>
         <TenStackProvider>
           {/*  NavBar*/}
-          <Navbar />
           <nav>
-            <h1>Navbar ho hai</h1>
+            <Navbar />
           </nav>
 
-          <body className={inter.className}> {children}</body>
+          <body className={`${inter.className}`}> {children}</body>
         </TenStackProvider>
       </ReduxProvider>
     </html>

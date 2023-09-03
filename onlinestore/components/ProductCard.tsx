@@ -1,7 +1,6 @@
-import { IProduct } from "@/types";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
+import { IProduct } from "@/types";
 
 interface ProductProps {
   product: IProduct;
@@ -36,7 +35,7 @@ const ProductCard = (props: ProductProps) => {
         </div>
         <div className="card-actions justify-end">
           <button
-            className="btn btn-primary text-white"
+            className="btn bg-orange-600 text-white"
             onClick={() => handleProductDetail(product?.id)}
           >
             Learn More
