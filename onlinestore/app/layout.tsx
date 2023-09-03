@@ -1,7 +1,10 @@
 import TenStackProvider from "@/provider/TenstackProvider";
-import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Navbar from "@/components/Navbar";
+
+import ReduxProvider from "@/provider/ReduxProvider";
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,10 +20,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <TenStackProvider>
-        {/*  NavBar*/}
-        <body className={inter.className}>{children}</body>
-      </TenStackProvider>
+      <ReduxProvider>
+        <TenStackProvider>
+          {/*  NavBar*/}
+          <Navbar />
+          <nav>
+            <h1>Navbar ho hai</h1>
+          </nav>
+
+          <body className={inter.className}> {children}</body>
+        </TenStackProvider>
+      </ReduxProvider>
     </html>
   );
 }

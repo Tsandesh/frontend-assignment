@@ -1,7 +1,12 @@
+import ProductDetailView from "@/views/ProductDetailView";
 import React from "react";
 
 const ProductDetail = () => {
-  return <div>ProductDetail</div>;
+  return (
+    <div>
+      <ProductDetailView />
+    </div>
+  );
 };
 
 export default ProductDetail;
